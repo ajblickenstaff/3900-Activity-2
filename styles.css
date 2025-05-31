@@ -1,0 +1,143 @@
+/*  basic reset  */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --brand: #0d9488;    /* teal-ish primary */
+  --dark: #1e293b;     /* slate */
+  --light: #f8fafc;    /* almost white */
+  --radius: 0.6rem;
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+body {
+  background: var(--light);
+  color: var(--dark);
+  line-height: 1.6;
+}
+
+/*  Layout  */
+header {
+  background: var(--brand);
+  color: white;
+  padding: 1rem 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+}
+
+header h1 {
+  flex: 1 1 auto;
+  font-size: 1.6rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 1rem;
+  font-weight: 600;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/*  Hero  */
+.hero {
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+}
+
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: grid;
+  place-content: center;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+.intro {
+  padding: 2rem 1.5rem;
+  max-width: 65ch;
+  margin: auto;
+}
+
+/*  Grid of cards on page 2  */
+.grid {
+  display: grid;
+  gap: 1.5rem;
+  padding: 2rem 1.5rem;
+}
+
+/* mobile-first—three columns kick in at ≥640 px */
+@media (min-width: 640px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card {
+  background: white;
+  border-radius: var(--radius);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card h2 {
+  font-size: 1.25rem;
+  margin: 1rem;
+}
+
+.card p {
+  margin: 0 1rem 1rem;
+  flex-grow: 1;
+}
+
+.btn {
+  display: inline-block;
+  background: var(--brand);
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  margin: 0 1rem 1.5rem;
+  border-radius: var(--radius);
+  text-align: center;
+  font-weight: 600;
+}
+
+.btn:hover {
+  filter: brightness(1.1);
+}
+
+footer {
+  background: var(--dark);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  margin-top: 2rem;
+}
